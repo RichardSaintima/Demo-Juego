@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://bacqoc4vgr1yi"]
+
+[ext_resource type="Script" path="res://UI/MenuOptiones/Options/hotkey_rebind_botton.gd" id="1_tvveu"]
+
+[sub_resource type="SystemFont" id="SystemFont_j0a7u"]
+font_names = PackedStringArray("Arial")
+
+[node name="hotkey_Rebind_Botton" type="Control" groups=["hotkey_botton"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tvveu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(400, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_j0a7u")
+theme_override_font_sizes/font_size = 30
+text = "ACTION"
+vertical_alignment = 1
+
+[node name="HSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 200
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+toggle_mode = true
+text = "ACTION_KEY"
+
+[connection signal="toggled" from="HBoxContainer/Button" to="." method="_on_button_toggled"]

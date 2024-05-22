@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://jftyrerrkprk"]
+
+[ext_resource type="Script" path="res://Scenes/NewGame/NewGame.cs" id="1_7uyfl"]
+[ext_resource type="PackedScene" uid="uid://dm0a6wl4rtjx" path="res://Player/Player.tscn" id="1_50q31"]
+[ext_resource type="PackedScene" uid="uid://b1xijdvfnosq3" path="res://UI/MenuPausa/MenuPausa.tscn" id="3_d3mio"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mn7sb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_544ew"]
+
+[node name="NewGame" type="Node3D"]
+script = ExtResource("1_7uyfl")
+
+[node name="Playes" parent="." instance=ExtResource("1_50q31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7502, 0)
+
+[node name="MenuPausa" parent="." instance=ExtResource("3_d3mio")]
+
+[node name="MeshInstance3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+mesh = SubResource("BoxMesh_mn7sb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D"]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+shape = SubResource("BoxShape3D_544ew")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.34393, 0)

@@ -1,0 +1,155 @@
+[gd_scene load_steps=10 format=3 uid="uid://d1mhsfb0hmm6t"]
+
+[ext_resource type="Script" path="res://UI/MenuPrincipal/MenuPrincipal.cs" id="1_2hulv"]
+[ext_resource type="Texture2D" uid="uid://bh763ju1seg64" path="res://UI/assets/fondos/igames.jpg" id="1_eqkqj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oecnb"]
+texture = ExtResource("1_eqkqj")
+
+[sub_resource type="SystemFont" id="SystemFont_6nbac"]
+font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_disfp"]
+font_italic = true
+font_weight = 700
+font_stretch = 125
+subpixel_positioning = 0
+msdf_pixel_range = 19
+oversampling = 5.7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0hlab"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgxeg"]
+bg_color = Color(0.517647, 0.396078, 0.545098, 0.556863)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hhq2d"]
+bg_color = Color(0.658824, 0.498039, 0.670588, 0.8)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ts1id"]
+
+[node name="MenuPrincipal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+script = ExtResource("1_2hulv")
+
+[node name="ControlBoton" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oecnb")
+
+[node name="Titulo" type="VBoxContainer" parent="ControlBoton"]
+layout_mode = 2
+theme_override_constants/separation = 62
+
+[node name="separator" type="Control" parent="ControlBoton/Titulo"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ControlBoton/Titulo"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 22
+theme_override_constants/shadow_outline_size = 9
+theme_override_fonts/font = SubResource("SystemFont_6nbac")
+theme_override_font_sizes/font_size = 100
+text = "DEMO"
+horizontal_alignment = 1
+
+[node name="separator2" type="Control" parent="ControlBoton/Titulo"]
+layout_mode = 2
+
+[node name="Botones" type="VBoxContainer" parent="ControlBoton"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 19
+
+[node name="Newgame" type="Button" parent="ControlBoton/Botones"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_disfp")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_0hlab")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mgxeg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hhq2d")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ts1id")
+text = "Nueva Partida"
+
+[node name="Continue" type="Button" parent="ControlBoton/Botones"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_disfp")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_0hlab")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mgxeg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hhq2d")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ts1id")
+text = "Continuar  Partida"
+
+[node name="Options" type="Button" parent="ControlBoton/Botones"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_disfp")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_0hlab")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mgxeg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hhq2d")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ts1id")
+text = "Configuracion"
+
+[node name="Exit" type="Button" parent="ControlBoton/Botones"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_disfp")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_0hlab")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mgxeg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hhq2d")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ts1id")
+text = "Salir"
+
+[connection signal="pressed" from="ControlBoton/Botones/Newgame" to="." method="_on_newgame_pressed"]
+[connection signal="pressed" from="ControlBoton/Botones/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="ControlBoton/Botones/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="ControlBoton/Botones/Exit" to="." method="_on_exit_pressed"]

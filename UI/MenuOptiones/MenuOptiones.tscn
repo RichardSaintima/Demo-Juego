@@ -1,0 +1,114 @@
+[gd_scene load_steps=9 format=3 uid="uid://dqalfigmfnwty"]
+
+[ext_resource type="Script" path="res://UI/MenuOptiones/MenuOptiones.cs" id="1_iyppw"]
+[ext_resource type="PackedScene" uid="uid://dxsqgymxa256v" path="res://UI/MenuOptiones/Options/settings_tabs_container.tscn" id="1_j1ojb"]
+
+[sub_resource type="SystemFont" id="SystemFont_44lx3"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="SystemFont" id="SystemFont_4n8c7"]
+font_italic = true
+font_weight = 700
+font_stretch = 125
+subpixel_positioning = 0
+msdf_pixel_range = 19
+oversampling = 5.7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2xa3"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cd0kj"]
+bg_color = Color(0.517647, 0.396078, 0.545098, 0.556863)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jycrk"]
+bg_color = Color(0.658824, 0.498039, 0.670588, 0.8)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yyai1"]
+
+[node name="MenuOptiones" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iyppw")
+
+[node name="ControlBoton" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Botones" type="VBoxContainer" parent="ControlBoton"]
+layout_mode = 2
+theme_override_constants/separation = -48
+
+[node name="Label" type="Label" parent="ControlBoton/Botones"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = SubResource("SystemFont_44lx3")
+theme_override_font_sizes/font_size = 50
+text = "Optiones"
+horizontal_alignment = 1
+
+[node name="settings_tabs_container" parent="ControlBoton/Botones" instance=ExtResource("1_j1ojb")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Exit" type="Button" parent="ControlBoton/Botones"]
+custom_minimum_size = Vector2(150, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = SubResource("SystemFont_4n8c7")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_l2xa3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cd0kj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jycrk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yyai1")
+text = "Salir"
+
+[connection signal="pressed" from="ControlBoton/Botones/Exit" to="." method="_on_exit_pressed"]
