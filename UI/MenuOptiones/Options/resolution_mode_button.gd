@@ -28,4 +28,4 @@ func add_windows_mode_items() -> void:
 		
 
 func on_resolution_selected(index : int) -> void:
-	pass
+	DisplayServer.window_set_size(RESOLUTION_DICTIONARY.values()[index])
